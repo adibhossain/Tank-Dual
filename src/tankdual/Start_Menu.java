@@ -37,22 +37,48 @@ public class Start_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Start Menu");
-        getContentPane().setLayout(new java.awt.GridLayout());
+        setBounds(new java.awt.Rectangle(200, 200, 800, 600));
+        setMaximumSize(new java.awt.Dimension(1260, 780));
+        setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         Body.setBackground(new java.awt.Color(153, 153, 255));
 
         Play.setBackground(new java.awt.Color(102, 255, 51));
         Play.setText("New Game");
+        Play.setMaximumSize(new java.awt.Dimension(100, 23));
+        Play.setMinimumSize(new java.awt.Dimension(100, 23));
+        Play.setPreferredSize(new java.awt.Dimension(120, 25));
+        Play.setRequestFocusEnabled(false);
 
         Load.setBackground(new java.awt.Color(255, 102, 0));
         Load.setText("Load Game");
+        Load.setMaximumSize(new java.awt.Dimension(100, 23));
+        Load.setMinimumSize(new java.awt.Dimension(100, 23));
+        Load.setPreferredSize(new java.awt.Dimension(120, 25));
+        Load.setRequestFocusEnabled(false);
 
         Achievements.setBackground(new java.awt.Color(255, 255, 51));
         Achievements.setText("Achievements");
+        Achievements.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Achievements.setMaximumSize(new java.awt.Dimension(130, 23));
+        Achievements.setMinimumSize(new java.awt.Dimension(100, 23));
+        Achievements.setPreferredSize(new java.awt.Dimension(120, 25));
+        Achievements.setRequestFocusEnabled(false);
+        Achievements.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AchievementsActionPerformed(evt);
+            }
+        });
 
         Quit.setBackground(new java.awt.Color(255, 0, 0));
         Quit.setForeground(new java.awt.Color(255, 255, 255));
         Quit.setText("Quit");
+        Quit.setMaximumSize(new java.awt.Dimension(100, 23));
+        Quit.setMinimumSize(new java.awt.Dimension(100, 23));
+        Quit.setPreferredSize(new java.awt.Dimension(120, 25));
+        Quit.setRequestFocusEnabled(false);
         Quit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QuitActionPerformed(evt);
@@ -64,10 +90,7 @@ public class Start_Menu extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Tank Dual");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\02-Term-2\\CSE-220\\Tank Dual - Alpha Hive\\Tank Dual\\assets\\rsz_2tank-removebg-preview.png")); // NOI18N
-
         Settings.setBackground(new java.awt.Color(153, 153, 255));
-        Settings.setIcon(new javax.swing.ImageIcon("D:\\02-Term-2\\CSE-220\\Tank Dual - Alpha Hive\\Tank Dual\\assets\\settings.png")); // NOI18N
         Settings.setBorder(null);
         Settings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,47 +102,48 @@ public class Start_Menu extends javax.swing.JFrame {
         Body.setLayout(BodyLayout);
         BodyLayout.setHorizontalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BodyLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Quit, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Achievements, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Play, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BodyLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Achievements, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Play, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Quit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(124, 124, 124)))
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
-                .addContainerGap(103, Short.MAX_VALUE)
+                .addGap(0, 200, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(91, 91, 91))
+                .addGap(196, 196, 196))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                .addGap(11, 11, 11)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(BodyLayout.createSequentialGroup()
                         .addComponent(Play, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Load)
+                        .addComponent(Load, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Achievements)
+                        .addComponent(Achievements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Quit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addComponent(Quit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                         .addComponent(Settings)
-                        .addGap(26, 26, 26))))
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         getContentPane().add(Body);
@@ -134,6 +158,10 @@ public class Start_Menu extends javax.swing.JFrame {
     private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SettingsActionPerformed
+
+    private void AchievementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AchievementsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AchievementsActionPerformed
 
     /**
      * @param args the command line arguments
